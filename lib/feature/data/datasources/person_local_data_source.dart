@@ -14,6 +14,7 @@ abstract class PersonLocalDataSource {
   Future<void> personsToCache(List<PersonModel> persons);
 }
 
+// ignore: constant_identifier_names
 const CACHED_PERSONS_LIST = "CACHED_PERSONS_LIST";
 
 class PersonLocalDataSourceImp implements PersonLocalDataSource {
