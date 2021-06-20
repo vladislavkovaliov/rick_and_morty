@@ -4,7 +4,7 @@ import 'package:rick_and_morty/core/error/exception.dart';
 import 'package:rick_and_morty/feature/data/models/person_model.dart';
 import 'package:http/http.dart' as http;
 
-abstract class PersonRemoveDateSource {
+abstract class PersonRemoteDateSource {
   /// Call the https://rickandmortyapi.com/api/character/?page=1 endpoint.
   ///
   /// Throws a [ServerException] for all error codes.
@@ -16,7 +16,7 @@ abstract class PersonRemoveDateSource {
   Future<List<PersonModel>> searchPerson(String query);
 }
 
-class PersonRemoteDateSourceImpl implements PersonRemoveDateSource {
+class PersonRemoteDateSourceImpl implements PersonRemoteDateSource {
   final http.Client client;
 
   PersonRemoteDateSourceImpl({required this.client});
