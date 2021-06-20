@@ -22,7 +22,7 @@ class SearchPersonParams extends Equatable {
   const SearchPersonParams({
       required this.query,
   });
-use
+
   @override
   List<Object?> get props => throw UnimplementedError();
 }
