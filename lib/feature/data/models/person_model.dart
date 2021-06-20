@@ -12,7 +12,7 @@ class PersonModel extends PersonEntity {
     required origin,
     required location,
     required image,
-    required episodes,
+    required episode,
     required created,
   }) : super(
           id: id,
@@ -24,7 +24,7 @@ class PersonModel extends PersonEntity {
           origin: origin,
           location: location,
           image: image,
-          episodes: episodes,
+          episode: episode,
           created: created,
         );
 
@@ -43,9 +43,9 @@ class PersonModel extends PersonEntity {
           ? LocationModel.fromJson(json["location"])
           : null,
       image: json["image"],
-      episodes:
-          (json["episodes"] as List<dynamic>).map((x) => x as String).toList(),
-      created: DateTime.parse(json["created"]) as String,
+      episode:
+          (json["episode"] as List<dynamic>).map((x) => x as String).toList(),
+      created: DateTime.parse(json["created"] as String),
     );
   }
 
@@ -60,7 +60,7 @@ class PersonModel extends PersonEntity {
       "origin": origin,
       "location": location,
       "image": image,
-      "episodes": episodes,
+      "episode": episode,
       "created": created.toIso8601String(),
     };
   }

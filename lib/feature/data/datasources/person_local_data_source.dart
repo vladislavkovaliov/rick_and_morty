@@ -29,7 +29,7 @@ class PersonLocalDataSourceImp implements PersonLocalDataSource {
     final jsonPersonsList =
         sharedPreferences.getStringList(CACHED_PERSONS_LIST);
 
-    if (jsonPersonsList!.isNotEmpty) {
+    if (jsonPersonsList != null && jsonPersonsList.isNotEmpty) {
       return Future.value(jsonPersonsList
           .map((person) => PersonModel.fromJson(json.decode(person)))
           .toList());
