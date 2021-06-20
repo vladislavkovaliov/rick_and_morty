@@ -4,6 +4,9 @@ import 'package:rick_and_morty/feature/domain/usecases/search_person.dart';
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_event.dart';
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_state.dart';
 
+const SERVER_FAILURE = "Server Failure";
+const CACHE_FAILURE = "Cache Failure";
+
 class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
   final SearchPerson searchPerson;
 
@@ -34,11 +37,11 @@ class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
     switch (failure.runtimeType) {
       case ServerFailure:
         {
-          return "Server Failure";
+          return SERVER_FAILURE;
         }
       case CacheFailure:
         {
-          return "Server Failure";
+          return CACHE_FAILURE;
         }
       default:
         {
