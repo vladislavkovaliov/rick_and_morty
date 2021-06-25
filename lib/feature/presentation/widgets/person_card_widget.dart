@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/common/app_colors.dart';
 import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
+import 'package:rick_and_morty/feature/presentation/pages/person_screen.dart';
 import 'package:rick_and_morty/feature/presentation/widgets/person_cache_image_widget.dart';
 
 class PersonCard extends StatelessWidget {
@@ -17,12 +18,18 @@ class PersonCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            child: PersonCacheImage(
-              width: 166,
-              height: 166,
-              imageUrl: person.image,
-            )
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PersonPage()));
+            },
+            child: Container(
+              child: PersonCacheImage(
+                width: 166,
+                height: 166,
+                imageUrl: person.image,
+              )
+            ),
           ),
           const SizedBox(width: 16.0),
           Expanded(

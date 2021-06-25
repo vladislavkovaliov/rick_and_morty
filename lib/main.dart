@@ -4,7 +4,7 @@ import 'package:rick_and_morty/feature/presentation/bloc/person_list_cubit/perso
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_bloc.dart';
 
 import 'common/app_colors.dart';
-import 'feature/presentation/pages/person_screen.dart';
+import 'feature/presentation/pages/persons_screen.dart';
 import 'locator_service.dart' as di;
 import 'locator_service.dart';
 

@@ -15,7 +15,7 @@ class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
   }) : super(PersonEmpty());
 
   @override
-  Stream<PersonSearchState> mapEventToState(PersonSearchEvent event) async* {
+    Stream<PersonSearchState> mapEventToState(PersonSearchEvent event) async* {
     if (event is SearchPersons) {
       yield* _mapFetchPersonsToState(event.personQuery);
     }
@@ -30,7 +30,7 @@ class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
 
     yield failureOrPerson.fold(
         (failure) => PersonSearchError(message: _mapFailureToMessage(failure)),
-        (person) => PersonSearchLoaded(persons: person));
+        (persons) => PersonSearchLoaded(persons: persons));
   }
 
   String _mapFailureToMessage(Failure failure) {
